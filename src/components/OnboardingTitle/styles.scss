@@ -1,0 +1,24 @@
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .number-container {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        h2 {
+            font-size: 28px;
+            color: #8247e5;
+        }
+    }
+
+    .title {
+        font-size: 32px;
+        color: white;
+    }
+}

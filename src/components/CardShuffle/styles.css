@@ -1,0 +1,87 @@
+.stack {
+    position: relative;
+    /* margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%); */
+    width: 80vw;
+    height: 50vh;
+}
+.card {
+    width: 80vw;
+    height: 50vh;
+    background: #ffffff;
+    border-radius: 6px;
+    position: absolute;
+    transform: translateY(0);
+    box-shadow: 0px 40px 55px -11px rgba(0, 0, 0, 0.12);
+}
+.card.one {
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+.card.two {
+    top: 20px;
+    z-index: 1;
+}
+.card.three {
+    top: 40px;
+    z-index: 0;
+}
+
+.card.one.anim {
+    animation: onTop 1s 1 ease normal forwards;
+}
+.card.two.anim {
+    animation: onMiddle 1s 1 ease normal;
+}
+.card.three.anim {
+    animation: onBottom 1s 1 ease normal;
+}
+
+.card span {
+    font-size: 24px;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+        "DejaVu Sans", Verdana, "sans-serif";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes onTop {
+    50% {
+        transform: translateY(-300px);
+        z-index: 1;
+        top: 20px;
+    }
+    100% {
+        transform: translateY(0);
+        z-index: 0;
+        top: 40px;
+    }
+}
+@keyframes onMiddle {
+    70% {
+        transform: translateY(0);
+        z-index: 2;
+        top: 0;
+    }
+    100% {
+        transform: translateY(0);
+        z-index: 2;
+        top: 0;
+    }
+}
+@keyframes onBottom {
+    80% {
+        transform: translateY(0);
+        z-index: 0;
+        top: 20px;
+    }
+    100% {
+        transform: translateY(0);
+        z-index: 1;
+        top: 20px;
+    }
+}

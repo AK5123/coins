@@ -1,0 +1,14 @@
+.ab-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    h2 {
+        font-size: 24px;
+        color: #8247e5;
+    }
+
+    .svg {
+        width: 50px;
+    }
+}
