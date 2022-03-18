@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+.demo-wrapper{
+  width: 80%;
+}
+
+.demo-editor{
+  border: 1px solid black;
+  max-height: 400px !important;
+  overflow-y: auto;
+}
+
+.toolbar-class{
+  border: 1px solid black !important;
+}

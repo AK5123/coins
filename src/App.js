@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
-import logo from "./logo.svg";
+import React, { useEffect, useState, createContext } from "react";
 import "./App.css";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+
+// import htmlToDraft from 'html-to-draftjs';
+
 import {
   getFirestore,
   collection,
@@ -10,6 +12,11 @@ import {
   doc,
   setDoc,
 } from "firebase/firestore";
+
+import FbContext from "./context";
+import ChildComponent from "./child";
+import OnBoarding from "./pages/onboarding";
+import OverView from "./pages/overviewPage";
 
 const App = () => {
   useEffect(() => {
@@ -29,36 +36,31 @@ const App = () => {
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
+    setDb(db);
+    // const newCityRef = doc(collection(db, "users"));
 
-    setDoc(doc(db, "users", "LAAA"), {
-      about: "Hi",
-      discord: "hash",
-      portfolio: "link",
-      reviews: [],
-    }).then((doc) => {
-      console.log("doc", doc);
-    });
+    // setDoc(newCityRef, {
+    //   about: "Hiii",
+    //   discord: "hash",
+    //   portfolio: "link",
+    //   reviews: [],
+    //   tags: ["full-stack"],
+    // }).then((doc) => {
+    //   console.log("doc", doc);
+    // });
 
-    console.log("app", db, collection(db, "users"));
+    // console.log("app", db, collection(db, "users"));
   }, []);
 
+  const [db, setDb] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FbContext.Provider value={db}>
+      <div className="App">
+        {/* <OnBoarding /> */}
+        <OverView />
+      </div>
+    </FbContext.Provider>
   );
 };
 
