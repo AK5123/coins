@@ -1,0 +1,33 @@
+.connect-wallet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 10%;
+    flex: 1;
+
+    h2 {
+        font-size: 35px;
+        color: white;
+    }
+
+    p {
+        font-size: 22px;
+        color: white;
+    }
+
+    .button-container {
+        padding: 8px 30px;
+        background-color: white;
+        border-radius: 12px;
+
+        p {
+            color: #8247e5;
+            font-size: 18px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

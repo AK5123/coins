@@ -1,0 +1,26 @@
+.gs-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px 0 15px;
+    .top {
+        flex: 1;
+        font-size: 40px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .video {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .bottom {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 15px;
+    }
+}
